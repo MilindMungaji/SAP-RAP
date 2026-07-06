@@ -3,9 +3,9 @@
  <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
   <asx:values>
    <VSEOCLASS>
-    <CLSNAME>Y_TEST_HELLO</CLSNAME>
-    <LANGU>J</LANGU>
-    <DESCRIPT>test</DESCRIPT>
+    <CLSNAME>ZIWS_INHERITANCE</CLSNAME>
+    <LANGU>E</LANGU>
+    <DESCRIPT>Child Class</DESCRIPT>
     <STATE>1</STATE>
     <CLSCCINCL>X</CLSCCINCL>
     <FIXPT>X</FIXPT>

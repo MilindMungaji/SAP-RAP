@@ -1,0 +1,4 @@
+@EndUserText.label: 'Student OData Service'
+define service ZUI_IWS_STUDENT {
+  expose ZC_IWS_STUDENT as Student;
+}

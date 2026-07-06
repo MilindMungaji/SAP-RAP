@@ -1,0 +1,7 @@
+@EndUserText.label: 'CDS'
+define type zcds_simple: abap.char( 5 )  enum {
+    NA = initial; 
+    Information_Technology = 'IT';
+    Mechanical_Engineering = 'ME';
+    
+}

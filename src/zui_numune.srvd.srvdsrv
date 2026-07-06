@@ -1,0 +1,4 @@
+@EndUserText.label: 'Numune Service'
+define service ZUI_NUMUNE {
+  expose ZI_NUMUNE as Numune;
+}

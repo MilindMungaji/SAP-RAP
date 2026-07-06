@@ -1,0 +1,27 @@
+@Metadata.layer: #CORE
+annotate entity zc_iws_stud_fees
+    with 
+{
+    @UI.facet: [{
+        id: 'facetfees',
+        purpose: #STANDARD,
+        parentId: 'facetstudent',
+        label: 'Fees Information',
+        type: #IDENTIFICATION_REFERENCE,
+        targetElement: '',
+        targetQualifier: 'facetfees'
+    }]
+   @UI.identification: [{ position: 10 }] 
+   Rollno;
+   @UI.identification: [{ position: 20 }]
+   Feesyear1;
+   @UI.identification: [{ position: 30 }]
+   Feesyear2;
+   @UI.identification: [{ position: 40 }]
+   Feesyear3;
+   @UI.identification: [{ position: 50 }]
+   Feesyear4;
+   @UI.identification: [{ position: 60 }]
+   Currency;
+    
+}

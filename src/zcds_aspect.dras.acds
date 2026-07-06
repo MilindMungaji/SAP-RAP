@@ -1,0 +1,6 @@
+@EndUserText.label: 'Aspect'
+define aspect zcds_aspect {
+  lastchanged        : abp_locinst_lastchange_utcl;
+  createdby          : abp_creation_user;
+  changedby          : abp_lastchange_user;
+}

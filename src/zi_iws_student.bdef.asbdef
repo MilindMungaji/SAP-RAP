@@ -1,0 +1,42 @@
+managed implementation in class zbp_i_iws_student1 unique;
+strict ( 2 );
+
+define behavior for ZI_IWS_Student alias Student
+//persistent table zdbiws_student
+lock master
+authorization master ( instance )
+//etag master <field_name>
+with unmanaged save
+{
+  create ( authorization : global );
+  update;
+  delete;
+  field ( readonly : update ) Rollnointernal, Rollno;
+  association _Acad { create; }
+  association _Fees { create; }
+}
+
+define behavior for ZI_IWS_STUD_ACAD alias Acad
+persistent table zdbiws_stud_acad
+lock dependent by _Stud
+authorization dependent by _Stud
+//etag master <field_name>
+{
+  update;
+  delete;
+  field ( readonly ) Rollnointernal, Rollno, Sem, Subject;
+  association _Stud;
+}
+
+define behavior for ZI_IWS_Stud_Fees alias Fees
+persistent table zdbiws_stud_fees
+lock dependent by _Stud
+authorization dependent by _Stud
+//etag master <field_name>
+//with unmanaged save
+{
+  update;
+  delete;
+  field ( readonly ) Rollnointernal, Rollno;
+  association _Stud;
+}

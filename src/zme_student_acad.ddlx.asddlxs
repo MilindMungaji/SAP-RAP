@@ -1,0 +1,30 @@
+@Metadata.layer: #CORE
+annotate entity zc_iws_stud_acad
+    with 
+{
+    @UI.facet: [{
+        id: 'facetacademy',
+        purpose: #STANDARD,
+        parentId: 'facetstudent',
+        label: 'Academy Information',
+        type: #LINEITEM_REFERENCE,
+        targetElement: '',
+        targetQualifier: 'facetacademy'
+    }]
+    @UI.lineItem: [{ position: 10 }]
+    @UI.identification: [{ position: 10 }]
+    Rollno;
+    @EndUserText.label: 'Semester'
+    @UI.lineItem: [{ position: 20 }]
+    @UI.identification: [{ position: 20 }]
+    Sem;
+    @EndUserText.label: 'Subject'
+    @UI.lineItem: [{ position: 30 }]
+    @UI.identification: [{ position: 30 }]
+    Subject;
+    @EndUserText.label: 'Marks'
+    @UI.lineItem: [{ position: 40 }]
+    @UI.identification: [{ position: 40 }]
+    Marks;
+    
+}

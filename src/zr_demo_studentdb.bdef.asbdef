@@ -1,0 +1,49 @@
+managed implementation in class ZBP_R_DEMO_STUDENTDB unique;
+strict ( 2 );
+with draft;
+extensible;
+define behavior for ZR_DEMO_STUDENTDB alias ZrDemoStudentdb
+persistent table ZDEMO_STUDENTDB
+extensible
+draft table ZDEMO_STDENTDB_D
+etag master Locallastchanged
+lock master total etag Lastchanged
+authorization master( global )
+{
+  field ( mandatory : create )
+   Rollno;
+
+  field ( readonly )
+   Locallastchanged,
+   Lastchanged,
+   Createdby;
+
+  field ( readonly : update )
+   Rollno;
+
+
+  create;
+  update;
+  delete;
+ action setAgeTo99 result [1] $self;
+
+  draft action Activate optimized;
+  draft action Discard;
+  draft action Edit;
+  draft action Resume;
+  draft determine action Prepare;
+
+  mapping for ZDEMO_STUDENTDB corresponding extensible
+  {
+    Rollno = ROLLNO;
+    Dept = DEPT;
+    Firstname = FIRSTNAME;
+    Lastname = LASTNAME;
+    Age = AGE;
+    Locallastchanged = LOCALLASTCHANGED;
+    Lastchanged = LASTCHANGED;
+    Createdby = CREATEDBY;
+    Chandedby = CHANDEDBY;
+  }
+
+}

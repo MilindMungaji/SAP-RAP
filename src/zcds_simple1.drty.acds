@@ -1,0 +1,8 @@
+@EndUserText.label: 'CDS Simple Types'
+define type zcds_simple1: abap.char( 5 ) enum {
+    NA = initial;
+    Information_Technology = 'IT';
+    Mechanical_Engineering = 'ME';
+    Computer_Science = 'CS';
+    Artificial_Intelligence = 'AI';
+}

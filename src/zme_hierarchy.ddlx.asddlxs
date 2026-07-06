@@ -1,0 +1,29 @@
+@Metadata.layer: #CORE
+annotate entity zc_hierarchy with
+{
+  @UI: {lineItem: [{ label: 'Sales org ID', position: 10 }],
+      identification: [{ label: 'Sales org ID', position: 10 }]
+  }
+  SalesOrgId;
+
+  @UI: {lineItem: [{ label: 'Sales org Name', position: 20 }],
+    identification: [{ label: 'Sales org Name', position: 20 }]
+  }
+  Name;
+
+  @UI: {lineItem: [{ label: 'Revenue', position: 50 }],
+    identification: [{ label: 'Revenue', position: 50 }]
+  }
+  Revenue;
+
+  @UI: {lineItem: [{ label: 'Currency', position: 60 }],
+    identification: [{ label: 'Currency', position: 60 }]
+  }
+  Currency;
+
+  @UI: {lineItem: [{ label: 'Parent Sales org ID', position: 70 }],
+        identification: [{ label: 'Parent Sales org ID', position: 70 }]
+  }
+  ParentSalesOrg;
+
+}

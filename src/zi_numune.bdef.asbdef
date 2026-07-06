@@ -1,0 +1,10 @@
+managed implementation in class zbp_i_numune unique;
+
+define behavior for ZI_NUMUNE alias Numune
+persistent table znumune_t_001
+lock master
+{
+  create;
+  update;
+  delete;
+}

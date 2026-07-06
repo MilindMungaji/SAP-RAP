@@ -1,0 +1,28 @@
+projection;
+strict ( 2 );
+
+define behavior for zc_iws_student1 alias Student
+{
+  use create;
+  use update;
+  use delete;
+
+  use association _Acad { create; }
+  use association _Fees { create; }
+}
+
+define behavior for zc_iws_stud_acad alias Acad
+{
+  use update;
+  use delete;
+
+  use association _Stud;
+}
+
+define behavior for zc_iws_stud_fees alias Fees
+{
+  use update;
+  use delete;
+
+  use association _Stud;
+}

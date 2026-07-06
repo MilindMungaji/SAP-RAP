@@ -1,0 +1,53 @@
+managed implementation in class ZBP_R_IWS_STUDENT unique;
+strict ( 2 );
+with draft;
+extensible;
+define behavior for ZR_IWS_STUDENT alias ZrIwsStudent
+persistent table ZIWS_STUDENT
+extensible
+draft table ZIWS_STUDENT_D
+etag master Lastchanged
+lock master total etag Lastchanged
+authorization master( global )
+{
+  field ( mandatory : create, readonly : update )
+  Rollno,
+  Rollnointernal;
+
+
+
+  field ( readonly )
+   Lastchanged,
+   Createdby,
+   Changedby;
+
+ // field ( readonly : update ) Rollnointernal, Rollno;
+
+
+  create;
+  update;
+  delete;
+
+ action setAgeTo99 result [1] $self;
+
+  draft action Activate optimized;
+  draft action Discard;
+  draft action Edit;
+  draft action Resume;
+  draft determine action Prepare;
+
+  mapping for ZIWS_STUDENT corresponding extensible
+  {
+    Rollnointernal = ROLLNOINTERNAL;
+    Rollno = ROLLNO;
+    Dept = DEPT;
+    Firstname = FIRSTNAME;
+    Lastname = LASTNAME;
+    Birthdate = BIRTHDATE;
+    Age = AGE;
+    Lastchanged = LASTCHANGED;
+    Createdby = CREATEDBY;
+    Changedby = CHANGEDBY;
+  }
+
+}
