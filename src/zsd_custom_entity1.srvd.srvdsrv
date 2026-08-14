@@ -1,0 +1,4 @@
+@EndUserText.label: 'Custom Entity'
+define service Zsd_custom_entity1 {
+  expose ZCDS_Custom_Entity;
+}

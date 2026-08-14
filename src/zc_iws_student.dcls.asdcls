@@ -1,0 +1,6 @@
+@EndUserText.label: 'ZC_IWS_STUDENT'
+@MappingRole: true
+define role ZC_IWS_STUDENT {
+  grant select on ZC_IWS_STUDENT
+  where INHERITING CONDITIONS FROM ENTITY ZR_IWS_STUDENT REPLACING { ROOT WITH _BaseEntity };
+}

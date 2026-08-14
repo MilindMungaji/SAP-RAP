@@ -1,0 +1,4 @@
+define scalar function zscalar_calc_stud_age
+  with parameters
+   birthdate : abap.dats
+  returns abap.int1

@@ -1,0 +1,14 @@
+{
+  "formatVersion": "1",
+  "header": {
+    "description": "Scalar Function Impl for Age",
+    "originalLanguage": "en",
+    "abapLanguageVersion": "cloudDevelopment"
+  },
+  "scalarFunctionName": "ZSCALAR_CALC_STUD_AGE",
+  "engine": "sqlEngine",
+  "sqlProperties": {
+    "amdpReference": "ZCL_IWS_AMDP=>CACULATE_AGE",
+    "autoExposedInSqlServices": false
+  }
+}

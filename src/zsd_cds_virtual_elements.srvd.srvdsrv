@@ -1,0 +1,4 @@
+@EndUserText.label: 'Virtual Elements'
+define service Zsd_cds_virtual_elements {
+  expose zproj_virtual_element;
+}

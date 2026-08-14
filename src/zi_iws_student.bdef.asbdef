@@ -1,0 +1,69 @@
+managed implementation in class zbp_i_iws_student unique;
+strict ( 1 );
+//with draft;
+with collaborative draft;
+
+define behavior for ZI_IWS_Student alias Student
+persistent table zdbiws_student
+draft table zdbiws_stud_d query zdraft_query
+lock master
+total etag Rollno
+authorization master ( instance )
+etag master changedby
+{
+  create ( features : global ); //
+  update;
+  delete;
+  field ( readonly : update, numbering : managed ) Rollnointernal;
+  association _Acad { create; }
+  association _Fees { create; }
+
+  //Action to update birthdate
+  action a_updateBirthdate parameter zabs_birthdate result [1] $self;
+
+  //Dynamic feature control - To enable the update of birthday ONLY for IT Students
+  //action ( features : instance ) a_updateBirthdate parameter zabs_birthdate result [1] $self;
+
+  //Validate if the entered birthdate is not a future date
+  validation validateBirthdate on save { field Birthdate; }
+
+  //Determination - To determine/Calculate the age based on birthdate
+  determination DetermineAge on modify { field Birthdate; }
+
+  //Side effects - To reload the age fields once the user has entered Birthdate and press TAB
+  side effects { field Birthdate affects field Age; }
+
+  //Draft handling
+  draft action Activate optimized;
+  draft action Edit;
+  draft action Discard;
+  draft action Resume;
+  draft determine action Prepare;
+  draft action Share;
+}
+
+define behavior for ZI_IWS_STUD_ACAD alias Academy
+persistent table zdbiws_stud_acad
+draft table zdbiws_stud_a_d
+lock dependent by _Stud
+authorization dependent by _Stud
+//etag master <field_name>
+{
+  update;
+  delete;
+  field ( readonly ) Rollnointernal, Rollno, Sem, Subject;
+  association _Stud;
+}
+
+define behavior for ZI_IWS_Stud_Fees alias Fees
+persistent table zdbiws_stud_fees
+draft table zdbiws_stud_a_f
+lock dependent by _Stud
+authorization dependent by _Stud
+//etag master <field_name>
+{
+  update;
+  delete;
+  field ( readonly ) Rollnointernal, Rollno;
+  association _Stud;
+}

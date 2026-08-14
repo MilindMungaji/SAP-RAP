@@ -1,0 +1,11 @@
+@EndUserText: {
+  label: 'Service Definition for ZC_IWS_STUDENT'
+}
+@ObjectModel: {
+  leadingEntity: {
+    name: 'ZC_IWS_STUDENT'
+  }
+}
+define service ZUI_IWS_STUDENT_O4 provider contracts odata_v4_ui {
+  expose ZC_IWS_STUDENT;
+}

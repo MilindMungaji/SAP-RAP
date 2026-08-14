@@ -1,0 +1,19 @@
+projection;
+strict ( 2 );
+use draft;
+use side effects;
+
+define behavior for ZC_IWS_STUDENT alias Student
+{
+  use create;
+  use update;
+  use delete;
+
+  use action setAgeTo99;
+
+  use action Activate;
+  use action Discard;
+  use action Edit;
+  use action Resume;
+  use action Prepare;
+}

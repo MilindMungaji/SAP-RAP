@@ -1,0 +1,11 @@
+@EndUserText.label: 'Simple Access Control'
+@MappingRole: true
+define role ZSIMPLE_ACCESS_CONTROL {
+    grant
+        select
+            on
+                ZI_IWS_STUDENT
+                    where
+                        Dept = 'CS';
+                        
+}

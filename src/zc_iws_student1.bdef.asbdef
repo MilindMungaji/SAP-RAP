@@ -1,0 +1,40 @@
+projection;
+strict ( 1 );
+use side effects;
+//use draft;
+use collaborative draft; // Exposes collaborative draft handling
+define behavior for zc_iws_student1 alias Student
+{
+  use create;
+  use update;
+  use delete;
+
+  use association _Acad { create; }
+  use association _Fees { create; }
+
+  use action a_updateBirthdate;
+
+  use action Activate;
+  use action Discard;
+  use action Edit;
+  use action Prepare;
+  use action Resume;
+
+  use action share;        // Exposes the share action for Fiori Elements
+}
+
+define behavior for zc_iws_stud_acad alias Acad
+{
+  use update;
+  use delete;
+
+  use association _Stud;
+}
+
+define behavior for zc_iws_stud_fees alias Fees
+{
+  use update;
+  use delete;
+
+  use association _Stud;
+}
